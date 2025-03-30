@@ -91,7 +91,7 @@ export class B2wordcloud {
     }
     _setDefaultFontSize(options) {
         if (options.autoFontSize) {
-            options.maxFontSize = this._wrapper.clientWidth
+            options.maxFontSize = typeof options.maxFontSize === 'number' ? options.maxFontSize : this._wrapper.clientWidth
             options.minFontSize = typeof options.minFontSize === 'number' ? options.minFontSize : 10
         } else {
             options.maxFontSize = typeof options.maxFontSize === 'number' ? options.maxFontSize : 36

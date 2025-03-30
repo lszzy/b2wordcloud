@@ -161,7 +161,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_setDefaultFontSize',
 	        value: function _setDefaultFontSize(options) {
 	            if (options.autoFontSize) {
-	                options.maxFontSize = this._wrapper.clientWidth;
+	                options.maxFontSize = typeof options.maxFontSize === 'number' ? options.maxFontSize : this._wrapper.clientWidth;
 	                options.minFontSize = typeof options.minFontSize === 'number' ? options.minFontSize : 10;
 	            } else {
 	                options.maxFontSize = typeof options.maxFontSize === 'number' ? options.maxFontSize : 36;
