@@ -214,6 +214,7 @@ if (!window.clearImmediate) {
       wait: 0,
       abortThreshold: 0, // disabled
       abort: function noop() {},
+      finish: function noop() {},
 
       minRotation: - Math.PI / 2,
       maxRotation: Math.PI / 2,
@@ -1411,6 +1412,7 @@ if (!window.clearImmediate) {
       var timer = loopingFunction(function loop() {
         if (i >= settings.list.length) {
           stoppingFunction(timer);
+          settings.finish();
           sendEvent('wordcloudstop', false);
           removeEventListener('wordcloudstart', anotherWordCloudStart);
 

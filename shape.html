@@ -410,6 +410,9 @@
                     dataIndex: index, // 高亮数据索引
                     keepAlive: true, // 高亮词是否唯一，false即同时只能高亮一个词
                 })
+            },
+            finish: function() {
+                console.log('词云渲染完成')
             }
         })
     </script>
